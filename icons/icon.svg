@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="150pt"
+   height="150pt"
+   viewBox="0 0 150 150"
+   preserveAspectRatio="xMidYMid"
+   id="svg4"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient9"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0.04146117"
+         id="stop9" />
+      <stop
+         style="stop-color:#00ecff;stop-opacity:1;"
+         offset="1"
+         id="stop10" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9"
+       id="linearGradient10"
+       x1="11.571262"
+       y1="75"
+       x2="138.42874"
+       y2="75"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="1.2203891"
+     inkscape:cx="158.96569"
+     inkscape:cy="19.256154"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <metadata
+     id="metadata1">
+Created by potrace 1.16, written by Peter Selinger 2001-2019
+</metadata>
+  <path
+     id="C"
+     style="color:#000000;display:inline;overflow:visible;opacity:1;fill:url(#linearGradient10);stroke:none;stroke-width:1.34467;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;enable-background:new;fill-opacity:1"
+     inkscape:label="C"
+     d="M 50.818607,3.0141171 C 43.746755,3.9847631 42.083332,4.6780821 38.200746,9.2539861 27.523637,21.595061 12.270487,43.780451 11.715832,47.940364 9.6358748,60.420102 30.295963,99.661266 54.562122,129.7513 65.793887,143.89501 71.757502,147.5 83.405263,147.5 c 10.12246,0 19.135057,-4.57482 29.257507,-14.83594 8.31983,-8.45849 10.39925,-13.58919 6.378,-16.08514 -1.80263,-1.24797 -4.02017,0.41681 -12.75598,9.15263 C 90.061133,142.09387 86.870383,140.98429 68.70542,112.28089 51.511112,85.102786 38.478208,56.121254 35.566269,38.64962 c -0.831982,-4.714568 -0.554655,-6.101206 2.079957,-8.319826 2.773275,-2.634612 4.990668,-2.77314 42.429894,-2.634476 45.89771,0.277328 46.17516,0.277328 41.0446,10.399782 -3.18926,6.378534 -2.91166,9.566988 0.97093,9.566988 3.60525,0 5.13001,-2.355389 10.5379,-18.163058 6.37853,-18.164953 7.2116,-24.1279009 3.88367,-25.3758749 -3.60526,-1.386638 -75.710822,-2.21835 -85.694613,-1.109038 z" />
+</svg>

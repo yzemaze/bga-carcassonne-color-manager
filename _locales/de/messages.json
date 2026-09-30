@@ -1,0 +1,150 @@
+{
+  "extensionName": {
+    "message": "BGA Carcassonne Color Manager",
+    "description": "The name of the extension"
+  },
+  "extensionShortName": {
+    "message": "Carcassonne Color Manager",
+    "description": "Short name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Carcassonne-Color Manager für Board Game Arena",
+    "description": "Description of the extension"
+  },
+  "errorMain": {
+    "message": "Fehler in der Hauptausführung",
+    "description": "Error message when main execution fails"
+  },
+  "popupTitle": {
+    "message": "BGA Carcassonne Color Manager",
+    "description": "Popup window title"
+  },
+  "playerColors": {
+    "message": "Farbreihenfolge",
+    "description": "Player colors feature label"
+  },
+  "playerColorsDesc": {
+    "message": "Reihenfolge der Spielerfarben festlegen. Klick auf Spielerboards zum Tauschen.",
+    "description": "Description for player colors"
+  },
+  "playerTextColors": {
+    "message": "Text",
+    "description": "Player text colors feature setting"
+  },
+  "playerTextColorsDesc": {
+    "message": "Spieler-Textfarben anpassen",
+    "description": "Description for player text colors"
+  },
+  "meepleColors": {
+    "message": "Meeples",
+    "description": "Meeple colors feature setting"
+  },
+  "meepleColorsDesc": {
+    "message": "Meeple-Farben anpassen",
+    "description": "Description for meeple colors"
+  },
+  "tileBorders": {
+    "message": "Plättchenrahmen",
+    "description": "Tile borders feature setting"
+  },
+  "tileBordersDesc": {
+    "message": "Rahmenfarben und -breite anpassen",
+    "description": "Description for tile borders feature"
+  },
+  "tileBorderWidth": {
+    "message": "Rahmenbreite",
+    "description": "Tile border width setting"
+  },
+  "resetColors": {
+    "message": "Farben zurücksetzen",
+    "description": "Reset colors button label"
+  },
+  "logLevel": {
+    "message": "Log Level",
+    "description": "Log level setting label"
+  },
+  "logLevelError": {
+    "message": "Fehler",
+    "description": "Error log level option"
+  },
+  "logLevelWarning": {
+    "message": "Warnung",
+    "description": "Warning log level option"
+  },
+  "logLevelInfo": {
+    "message": "Info",
+    "description": "Info log level option"
+  },
+  "logLevelDebug": {
+    "message": "Debug",
+    "description": "Debug log level option"
+  },
+  "verboseLogging": {
+    "message": "Ausführliches Logging",
+    "description": "Verbose logging setting label"
+  },
+  "verboseLoggingDesc": {
+    "message": "Ausführliches Logging aktivieren",
+    "description": "Description for verbose logging"
+  },
+  "tabUi": {
+    "message": "Farben",
+    "description": "Colors tab button text"
+  },
+  "tabHelp": {
+    "message": "Hilfe",
+    "description": "Help tab button text"
+  },
+  "tabHelpTitle": {
+    "message": "Hilfe und Support",
+    "description": "Tooltip for Help tab"
+  },
+  "tabUiTitle": {
+    "message": "Spielerfarben-Einstellungen",
+    "description": "Tooltip for UI tab"
+  },
+  "helpGeneralRepo": {
+    "message": "Github repository",
+    "description": "Label for general repository link"
+  },
+  "helpSupportDiscussions": {
+    "message": "Support",
+    "description": "Label for support discussions link"
+  },
+  "helpSupportIssues": {
+    "message": "Fehlerberichte",
+    "description": "Label for support issues link"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version number label"
+  },
+  "colorOrderVisualTitle": {
+    "message": "Ziehen zum Umsortieren",
+    "description": "Tooltip for color order visual"
+  },
+  "colorGreen": {
+    "message": "Grün",
+    "description": "Color name Green"
+  },
+  "colorYellow": {
+    "message": "Gelb",
+    "description": "Color name Yellow"
+  },
+  "colorRed": {
+    "message": "Rot",
+    "description": "Color name Red"
+  },
+  "colorBlue": {
+    "message": "Blau",
+    "description": "Color name Blue"
+  },
+  "colorBlack": {
+    "message": "Schwarz",
+    "description": "Color name Black"
+  },
+  "resetColorsTitle": {
+    "message": "Alle Farbeinstellungen auf Standard zurücksetzen",
+    "description": "Tooltip for reset colors button"
+  }
+}

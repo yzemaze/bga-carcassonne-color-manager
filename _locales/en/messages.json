@@ -1,0 +1,150 @@
+{
+  "extensionName": {
+    "message": "BGA Carcassonne Color Manager",
+    "description": "The name of the extension"
+  },
+  "extensionShortName": {
+    "message": "Carcassonne Color Manager",
+    "description": "Short name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Carcassonne color manager for Board Game Arena",
+    "description": "Description of the extension"
+  },
+  "errorMain": {
+    "message": "Error in main execution",
+    "description": "Error message when main execution fails"
+  },
+  "popupTitle": {
+    "message": "BGA Carcassonne Color Manager",
+    "description": "Popup window title"
+  },
+  "playerColors": {
+    "message": "Color Order",
+    "description": "Player colors feature label"
+  },
+  "playerColorsDesc": {
+    "message": "Prioritize preferred colors. Click player boards to toggle.",
+    "description": "Description for player colors"
+  },
+  "playerTextColors": {
+    "message": "Text",
+    "description": "Player text colors feature setting"
+  },
+  "playerTextColorsDesc": {
+    "message": "Customize player text colors",
+    "description": "Description for player text colors"
+  },
+  "meepleColors": {
+    "message": "Meeples",
+    "description": "Meeple colors feature setting"
+  },
+  "meepleColorsDesc": {
+    "message": "Customize meeple colors",
+    "description": "Description for meeple colors"
+  },
+  "tileBorders": {
+    "message": "Tile Borders",
+    "description": "Tile borders feature setting"
+  },
+  "tileBordersDesc": {
+    "message": "Customize tile border colors and width",
+    "description": "Description for tile borders feature"
+  },
+  "tileBorderWidth": {
+    "message": "Border Width",
+    "description": "Tile border width setting"
+  },
+  "resetColors": {
+    "message": "Reset Colors",
+    "description": "Reset colors button label"
+  },
+  "logLevel": {
+    "message": "Log Level",
+    "description": "Log level setting label"
+  },
+  "logLevelError": {
+    "message": "Error",
+    "description": "Error log level option"
+  },
+  "logLevelWarning": {
+    "message": "Warning",
+    "description": "Warning log level option"
+  },
+  "logLevelInfo": {
+    "message": "Info",
+    "description": "Info log level option"
+  },
+  "logLevelDebug": {
+    "message": "Debug",
+    "description": "Debug log level option"
+  },
+  "verboseLogging": {
+    "message": "Verbose Logging",
+    "description": "Verbose logging setting label"
+  },
+  "verboseLoggingDesc": {
+    "message": "Enable verbose logging",
+    "description": "Description for verbose logging"
+  },
+  "tabUi": {
+    "message": "Colors",
+    "description": "Colors tab button text"
+  },
+  "tabHelp": {
+    "message": "Help",
+    "description": "Help tab button text"
+  },
+  "tabHelpTitle": {
+    "message": "Help and Support",
+    "description": "Tooltip for Help tab"
+  },
+  "tabUiTitle": {
+    "message": "Player colors settings",
+    "description": "Tooltip for UI tab"
+  },
+  "helpGeneralRepo": {
+    "message": "Github repository",
+    "description": "Label for general repository link"
+  },
+  "helpSupportDiscussions": {
+    "message": "Support",
+    "description": "Label for support discussions link"
+  },
+  "helpSupportIssues": {
+    "message": "Issues",
+    "description": "Label for support issues link"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version number label"
+  },
+  "colorOrderVisualTitle": {
+    "message": "Drag to reorder",
+    "description": "Tooltip for color order visual"
+  },
+  "colorGreen": {
+    "message": "Green",
+    "description": "Color name Green"
+  },
+  "colorYellow": {
+    "message": "Yellow",
+    "description": "Color name Yellow"
+  },
+  "colorRed": {
+    "message": "Red",
+    "description": "Color name Red"
+  },
+  "colorBlue": {
+    "message": "Blue",
+    "description": "Color name Blue"
+  },
+  "colorBlack": {
+    "message": "Black",
+    "description": "Color name Black"
+  },
+  "resetColorsTitle": {
+    "message": "Reset all color settings to defaults",
+    "description": "Tooltip for reset colors button"
+  }
+}

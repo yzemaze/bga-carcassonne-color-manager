@@ -1,0 +1,4 @@
+# Build and distribution
+build/
+dist/
+node_modules/

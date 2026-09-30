@@ -1,0 +1,52 @@
+{
+  "name": "bga-carcassonne-color-manager",
+  "version": "0.2.9",
+  "description": "Browser extension for Carcassonne color management on Board Game Arena",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "build:dev": "node build.js --dev",
+    "build:prod": "node build.js --prod",
+    "build:firefox": "node build.js --firefox",
+    "build:chrome": "node build.js --chrome",
+    "clean": "node build.js --clean",
+    "pack": "node build.js --pack",
+    "dist": "node build.js --dist",
+    "dist:prod": "node build.js --prod --dist",
+    "release": "node build.js --prod --dist --clean --upload",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "board-game-arena",
+    "carcassonne",
+    "browser-extension",
+    "chrome-extension",
+    "firefox-addon"
+  ],
+  "author": "yzemaze",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/yzemaze/bga-carcassonne-color-manager",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yzemaze/bga-carcassonne-color-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yzemaze/bga-carcassonne-color-manager/issues"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "archiver": "^7.0.1",
+    "chalk": "^4.1.2",
+    "eslint": "^9.31.0",
+    "eslint-plugin-sonarjs": "^3.0.4",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "globals": "^16.3.0",
+    "ora": "^5.4.1",
+    "terser": "^5.46.0",
+    "yargs": "^17.7.2"
+  }
+}

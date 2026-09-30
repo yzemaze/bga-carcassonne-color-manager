@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title data-i18n="popupTitle">BGA Carcassonne Color Manager</title>
+	<link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+	<div class="popup-container">
+		<header class="popup-header">
+			<h1 data-i18n="popupTitle">Settings</h1>
+		</header>
+		<div class="popup-content">
+			<!-- Tab Navigation -->
+			<div class="tab-nav">
+				<button class="tab-button active" data-tab="appearance" title="Visual appearance and UI settings" data-i18n="tabUi" data-i18n-title="tabUiTitle">UI</button>
+				<button class="tab-button" data-tab="help" title="Help and support" data-i18n="tabHelp" data-i18n-title="tabHelpTitle">Help</button>
+			</div>
+			<!-- Appearance Tab -->
+			<div class="tab-content active" id="appearance-tab">
+				<div class="setting-group">
+					<div class="setting-item">
+						<label class="toggle-label" data-i18n-title="playerColorsDesc">
+							<input type="checkbox" id="popup-player-colors" />
+							<span class="toggle-slider"></span>
+							<span data-i18n="playerColors">Color order</span>
+						</label>
+						<div class="color-order-visual-container player-colors-sub" style="display: none">
+							<div id="color-order-visual" class="color-order-visual" title="Drag to reorder colors" data-i18n-title="colorOrderVisualTitle"></div>
+						</div>
+					</div>
+
+					<div class="setting-item">
+						<label class="toggle-label" data-i18n-title="meepleColorsDesc">
+							<span data-i18n="meepleColors">Meeples</span>
+						</label>
+						<div class="color-swatches">
+							<div class="custom-color-swatch" id="popup-meeple-green" data-setting="meepleColorGreen" title="Green" data-i18n-title="colorGreen"></div>
+							<div class="custom-color-swatch" id="popup-meeple-yellow" data-setting="meepleColorYellow" title="Yellow" data-i18n-title="colorYellow"></div>
+							<div class="custom-color-swatch" id="popup-meeple-red" data-setting="meepleColorRed" title="Red" data-i18n-title="colorRed"></div>
+							<div class="custom-color-swatch" id="popup-meeple-blue" data-setting="meepleColorBlue" title="Blue" data-i18n-title="colorBlue"></div>
+							<div class="custom-color-swatch" id="popup-meeple-black" data-setting="meepleColorBlack" title="Black" data-i18n-title="colorBlack"></div>
+						</div>
+					</div>
+
+					<div class="setting-item">
+						<label class="toggle-label" data-i18n-title="playerTextColorsDesc">
+							<span data-i18n="playerTextColors">Text</span>
+						</label>
+						<div class="color-swatches">
+							<div class="custom-color-swatch" id="popup-player-text-green" data-setting="playerTextGreen" title="Green" data-i18n-title="colorGreen"></div>
+							<div class="custom-color-swatch" id="popup-player-text-yellow" data-setting="playerTextYellow" title="Yellow" data-i18n-title="colorYellow"></div>
+							<div class="custom-color-swatch" id="popup-player-text-red" data-setting="playerTextRed" title="Red" data-i18n-title="colorRed"></div>
+							<div class="custom-color-swatch" id="popup-player-text-blue" data-setting="playerTextBlue" title="Blue" data-i18n-title="colorBlue"></div>
+							<div class="custom-color-swatch" id="popup-player-text-black" data-setting="playerTextBlack" title="Black" data-i18n-title="colorBlack"></div>
+						</div>
+					</div>
+
+					<div class="setting-item">
+						<label class="toggle-label" data-i18n-title="tileBordersDesc">
+							<span data-i18n="tileBorders">Tile Borders</span>
+						</label>
+						<div class="color-swatches">
+							<div class="custom-color-swatch" id="popup-tile-border-green" data-setting="tileBorderGreen" title="Green" data-i18n-title="colorGreen"></div>
+							<div class="custom-color-swatch" id="popup-tile-border-yellow" data-setting="tileBorderYellow" title="Yellow" data-i18n-title="colorYellow"></div>
+							<div class="custom-color-swatch" id="popup-tile-border-red" data-setting="tileBorderRed" title="Red" data-i18n-title="colorRed"></div>
+							<div class="custom-color-swatch" id="popup-tile-border-blue" data-setting="tileBorderBlue" title="Blue" data-i18n-title="colorBlue"></div>
+							<div class="custom-color-swatch" id="popup-tile-border-black" data-setting="tileBorderBlack" title="Black" data-i18n-title="colorBlack"></div>
+						</div>
+					</div>
+					<div class="setting-item slider-container">
+						<label for="popup-tile-border-width" data-i18n="tileBorderWidth">Border Width</label>
+						<input type="range" id="popup-tile-border-width" min="2" max="8" step="1" value="5" />
+						<input type="number" id="popup-tile-border-width-input" min="2" max="8" step="1" value="5" />
+						<span>px</span>
+					</div>
+				</div>
+			</div>
+			<!-- Help Tab -->
+			<div class="tab-content" id="help-tab">
+				<div class="setting-group">
+					<div class="setting-item">
+						<button id="reset-colors" class="btn btn-secondary" title="Reset all color settings to defaults" data-i18n-title="resetColorsTitle">
+							<span data-i18n="resetColors">Reset Colors</span>
+						</button>
+					</div>
+				</div>
+				<div class="setting-group">
+					<div class="setting-item">
+						<a href="https://github.com/yzemaze/bga-carcassonne-color-manager" target="_blank" class="help-link" data-i18n="helpGeneralRepo">General Repository</a>
+					</div>
+					<div class="setting-item">
+						<a href="https://github.com/yzemaze/bga-carcassonne-color-manager/discussions" target="_blank" class="help-link" data-i18n="helpSupportDiscussions">Support</a>
+					</div>
+					<div class="setting-item">
+						<a href="https://github.com/yzemaze/bga-carcassonne-color-manager/issues" target="_blank" class="help-link" data-i18n="helpSupportIssues">Issues</a>
+					</div>
+				</div>
+				<div class="setting-group">
+					<div class="setting-item">
+						<label for="popup-log-level" data-i18n="logLevel">Log Level</label>
+						<select id="popup-log-level">
+							<option value="error" data-i18n="logLevelError">Error</option>
+							<option value="warn" data-i18n="logLevelWarning">Warning</option>
+							<option value="info" data-i18n="logLevelInfo">Info</option>
+							<option value="debug" data-i18n="logLevelDebug">Debug</option>
+						</select>
+					</div>
+					<div class="setting-item">
+						<label class="toggle-label" data-i18n-title="verboseLoggingDesc">
+							<input type="checkbox" id="popup-verbose-logging" />
+							<span class="toggle-slider"></span>
+							<span data-i18n="verboseLogging">Verbose Logging</span>
+						</label>
+					</div>
+				</div>
+				<div class="version-info">
+					<span data-i18n="version">Version</span>: <span id="extension-version">0.0.0</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="color-picker-container" class="color-picker-container" style="display: none">
+		<canvas id="color-wheel" width="150" height="150"></canvas>
+		<canvas id="saturation-slider" width="150" height="30"></canvas>
+		<input id="hex-input" type="text">
+	</div>
+	<script src="../shared/default-settings.js"></script>
+	<script src="../shared/utils.js"></script>
+	<script src="color-picker.js"></script>
+	<script src="popup.js"></script>
+</body>
+
+</html>
