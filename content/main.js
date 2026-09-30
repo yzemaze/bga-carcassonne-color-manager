@@ -9,7 +9,7 @@
 	"use strict";
 
 	if (window.bgaCarcassonneColorManager) {
-		debugLog("Main", "Extension already initialized, skipping");
+		debugLog("Main", "Extension already initialized, skipping", null, "debug");
 		return;
 	}
 	window.bgaCarcassonneColorManager = true;

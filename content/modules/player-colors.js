@@ -302,7 +302,7 @@ function togglePlayerColors() {
 	}
 	showAlternate = !showAlternate;
 	applyScheme();
-	window.Utils.debugLog("PlayerColors", "Toggled color scheme", { showAlternate });
+	window.Utils.debugLog("PlayerColors", "Toggled color scheme", { showAlternate }, "debug");
 }
 
 /**
