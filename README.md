@@ -12,11 +12,11 @@
 ### Getting Started
 1. Navigate to any Carcassonne game (live/replay) on Board Game Arena.
 2. Click the extension icon in your toolbar to access detailed settings.
-3. Reorder colors by drag & dropping the color swatches next to `Player Colors`. (1st selected color will be yours or – if you’re just watching – the 1st listed player’s.)
-4. Change text, meeple and tile border colors to your liking.
+3. Change text, meeple and tile border colors to your liking.
+4. Activate `Color Order` and reorder colors by drag & dropping the color swatches next to it. (1st selected color will be yours or – if you’re just watching – the 1st listed player’s.)
 5. Click on any player’s board to switch players’ colors.
 
-Toggle `Player Colors` to switch between user-defined and BGA’s original colors.
+Toggle `Color Order` to switch between user-defined and BGA’s original color assignments.
 
 ### Settings
 
