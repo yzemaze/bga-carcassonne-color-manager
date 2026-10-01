@@ -289,8 +289,13 @@ body {
 	transform: scale(1.1);
 }
 
+/* Pinned to the popup's edges so the browser UI never covers it */
 .color-picker-container {
-	position: absolute;
+	position: fixed;
+	top: 4px;
+	bottom: 4px;
+	left: 4px;
+	width: 170px;
 	z-index: 100;
 	background-color: var(--background);
 	border: 1px solid var(--border-color);
@@ -299,6 +304,8 @@ body {
 	padding: 8px;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	gap: 5px;
 }
 

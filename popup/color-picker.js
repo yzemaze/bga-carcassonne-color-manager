@@ -224,17 +224,8 @@ class ColorPicker {
 				this.drawSaturationSlider();
 			}
 		}
-		
-		const containerRect = swatchElement.closest(".color-swatches").getBoundingClientRect();
-		
-		// Simple positioning: above swatches, moved up 20px more, left at 10px
-		const top = containerRect.top - 170 - 20; // 170 for picker height + 20px higher
-		const left = 10; // Fixed left position
-		
-		this.container.style.top = `${top}px`;
-		this.container.style.left = `${left}px`;
-		this.container.style.width = "170px";
-		this.container.style.display = "block";
+
+		this.container.style.display = "flex";
 	}
 
 	hide() {
