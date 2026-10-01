@@ -250,6 +250,7 @@ class PopupManager {
 
 	async resetColors() {
 		await this.applyColorSet(this.parseColorSet({ ...this.defaultSettings }));
+		this.showStatus("statusColorsReset");
 	}
 
 	async saveColorSet() {

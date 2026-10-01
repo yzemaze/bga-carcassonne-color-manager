@@ -195,6 +195,10 @@
     "message": "Farben importiert",
     "description": "Status after importing colors"
   },
+  "statusColorsReset": {
+    "message": "Farben auf Standard zurückgesetzt",
+    "description": "Status after resetting colors"
+  },
   "statusInvalidColors": {
     "message": "Ungültige Farbdaten",
     "description": "Status when imported or saved colors are invalid"
