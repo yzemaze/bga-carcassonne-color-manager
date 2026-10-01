@@ -33,8 +33,8 @@ Toggle `Color Order` to switch between user-defined and BGA’s original color a
 - Reorder color sequence and customize text, meeple and border colors.
 
 #### Help Tab
-- Save colors (synced via your browser account) and restore them
-- Copy colors to the clipboard and import colors by pasting them
+- Save colors & settings (synced via your browser account) and restore them
+- Copy colors & settings to the clipboard and import colors by pasting them
 - Reset colors
 - Links to repository, issues, discussions
 - Log level control
