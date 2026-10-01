@@ -2,6 +2,28 @@
 
 /* global ColorPicker */
 
+// Every setting except logging belongs to a color set
+const COLOR_SET_KEYS = Object.keys(window.DEFAULT_SETTINGS).filter((key) => !["logLevel", "verboseLogging"].includes(key));
+
+/**
+ * Validates a color set value, imported values end up in the game page's CSS
+ * @param {string} key - Setting key
+ * @param {*} value - Setting value
+ * @returns {boolean} True if valid
+ */
+function isValidColorSetting(key, value) {
+	switch (key) {
+		case "playerColors":
+			return typeof value === "boolean";
+		case "colorOrder":
+			return typeof value === "string" && value.length === 5 && [..."ybrgk"].every((c) => value.includes(c));
+		case "tileBorderWidth":
+			return Number.isInteger(value) && value >= 2 && value <= 8;
+		default:
+			return typeof value === "string" && /^#[0-9a-f]{6}$/i.test(value);
+	}
+}
+
 class PopupManager {
 	constructor() {
 		this.settings = {};
@@ -28,6 +50,7 @@ class PopupManager {
 			this.setupEventListeners();
 			this.displayVersion();
 			this.updateUI();
+			await this.updateRestoreButton();
 		} catch (error) {
 			debugLog("Popup", "Failed to initialize popup", error, "error");
 		}
@@ -96,6 +119,13 @@ class PopupManager {
 				element.title = message;
 			}
 		});
+
+		document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+			const message = chrome.i18n.getMessage(element.getAttribute("data-i18n-placeholder"));
+			if (message) {
+				element.placeholder = message;
+			}
+		});
 	}
 
 	setupEventListeners() {
@@ -108,8 +138,19 @@ class PopupManager {
 			});
 		});
 
-		document.getElementById("reset-colors").addEventListener("click", () => {
-			this.resetColors();
+		document.getElementById("reset-colors").addEventListener("click", () => this.resetColors());
+		document.getElementById("save-colors").addEventListener("click", () => this.saveColorSet());
+		document.getElementById("restore-colors").addEventListener("click", () => this.restoreColorSet());
+		document.getElementById("export-colors").addEventListener("click", () => this.exportColorSet());
+
+		const importInput = document.getElementById("import-colors");
+		importInput.addEventListener("paste", (e) => {
+			e.preventDefault();
+			this.importColorSet(e.clipboardData.getData("text"));
+		});
+		importInput.addEventListener("change", () => {
+			this.importColorSet(importInput.value);
+			importInput.value = "";
 		});
 
 		this.setupTabs();
@@ -180,24 +221,106 @@ class PopupManager {
 		this.updateColorOrderVisual();
 	}
 
-	async resetColors() {
-		try {
-			const colorSettings = [
-				"playerColors", "colorOrder",
-				"playerTextGreen", "playerTextYellow", "playerTextRed", "playerTextBlue", "playerTextBlack",
-				"meepleColorGreen", "meepleColorYellow", "meepleColorRed", "meepleColorBlue", "meepleColorBlack",
-				"tileBorderGreen", "tileBorderYellow", "tileBorderRed", "tileBorderBlue", "tileBorderBlack"
-			];
+	getColorSet() {
+		return Object.fromEntries(COLOR_SET_KEYS.map((key) => [key, this.settings[key]]));
+	}
 
-			colorSettings.forEach(setting => {
-				this.settings[setting] = this.defaultSettings[setting];
-			});
-
-			this.updateUI();
-			await this.saveSettings();
-		} catch (error) {
-			debugLog("Popup", "Failed to reset colors", error, "error");
+	/**
+	 * Validates a color set and fills missing keys with defaults
+	 * @param {*} data - Parsed color set
+	 * @returns {Object|null} Complete color set or null if invalid
+	 */
+	parseColorSet(data) {
+		if (!data || typeof data !== "object" || Array.isArray(data)) {
+			return null;
 		}
+		const entries = COLOR_SET_KEYS.filter((key) => key in data).map((key) => [key, data[key]]);
+		if (entries.length === 0 || !entries.every(([key, value]) => isValidColorSetting(key, value))) {
+			return null;
+		}
+		const defaults = COLOR_SET_KEYS.map((key) => [key, this.defaultSettings[key]]);
+		return { ...Object.fromEntries(defaults), ...Object.fromEntries(entries) };
+	}
+
+	async applyColorSet(colorSet) {
+		Object.assign(this.settings, colorSet);
+		this.updateUI();
+		await this.saveSettings();
+	}
+
+	async resetColors() {
+		await this.applyColorSet(this.parseColorSet({ ...this.defaultSettings }));
+	}
+
+	async saveColorSet() {
+		try {
+			await chrome.storage.sync.set({ savedColors: this.getColorSet() });
+			document.getElementById("restore-colors").disabled = false;
+			this.showStatus("statusColorsSaved");
+		} catch (error) {
+			debugLog("Popup", "Failed to save color set", error, "error");
+			this.showStatus("statusError", true);
+		}
+	}
+
+	async restoreColorSet() {
+		try {
+			const { savedColors } = await chrome.storage.sync.get("savedColors");
+			const colorSet = this.parseColorSet(savedColors);
+			if (!colorSet) {
+				this.showStatus("statusInvalidColors", true);
+				return;
+			}
+			await this.applyColorSet(colorSet);
+			this.showStatus("statusColorsRestored");
+		} catch (error) {
+			debugLog("Popup", "Failed to restore color set", error, "error");
+			this.showStatus("statusError", true);
+		}
+	}
+
+	async updateRestoreButton() {
+		try {
+			const { savedColors } = await chrome.storage.sync.get("savedColors");
+			document.getElementById("restore-colors").disabled = !savedColors;
+		} catch (error) {
+			debugLog("Popup", "Failed to read saved color set", error, "error");
+		}
+	}
+
+	async exportColorSet() {
+		try {
+			await navigator.clipboard.writeText(JSON.stringify(this.getColorSet()));
+			this.showStatus("statusColorsCopied");
+		} catch (error) {
+			debugLog("Popup", "Failed to copy color set", error, "error");
+			this.showStatus("statusError", true);
+		}
+	}
+
+	async importColorSet(text) {
+		let colorSet = null;
+		try {
+			colorSet = this.parseColorSet(JSON.parse(text));
+		} catch {
+			colorSet = null;
+		}
+		if (!colorSet) {
+			this.showStatus("statusInvalidColors", true);
+			return;
+		}
+		await this.applyColorSet(colorSet);
+		this.showStatus("statusColorsImported");
+	}
+
+	showStatus(messageKey, isError = false) {
+		const status = document.getElementById("color-set-status");
+		status.textContent = chrome.i18n.getMessage(messageKey);
+		status.classList.toggle("error", isError);
+		clearTimeout(this.statusTimeout);
+		this.statusTimeout = setTimeout(() => {
+			status.textContent = "";
+		}, 3000);
 	}
 
 	makeSortable(container) {

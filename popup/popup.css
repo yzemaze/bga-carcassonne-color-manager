@@ -11,6 +11,7 @@
 	--border-color: #e2e8f0;
 	--border-hover: #cbd5e1;
 	--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	--error-color: #dc2626;
 	--radius: 0.375rem;
 	--spacing: 0.5rem;
 }
@@ -29,6 +30,7 @@
 		--border-color: #374151;
 		--border-hover: #4b5563;
 		--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+		--error-color: #f87171;
 	}
 }
 
@@ -405,10 +407,40 @@ select:focus {
 	border-color: var(--border-color);
 }
 
-.btn-secondary:hover {
+.btn:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.btn-secondary:hover:not(:disabled) {
 	background: var(--border-color);
 	color: var(--text-color);
 	border-color: var(--border-hover);
+}
+
+.button-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--spacing);
+	margin-bottom: 0.75rem;
+}
+
+#import-colors {
+	font-size: 11px;
+}
+
+.status-text {
+	font-size: 11px;
+	color: var(--text-secondary);
+	text-align: center;
+}
+
+.status-text.error {
+	color: var(--error-color);
+}
+
+.status-text:empty {
+	display: none;
 }
 
 /* Scrollbar styling */

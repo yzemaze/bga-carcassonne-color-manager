@@ -82,11 +82,27 @@
 			<!-- Help Tab -->
 			<div class="tab-content" id="help-tab">
 				<div class="setting-group">
+					<div class="button-row">
+						<button id="save-colors" class="btn btn-secondary" title="Save current colors, synced across your browsers" data-i18n-title="saveColorsTitle">
+							<span data-i18n="saveColors">Save Colors</span>
+						</button>
+						<button id="restore-colors" class="btn btn-secondary" title="Restore your saved colors" data-i18n-title="restoreColorsTitle" disabled>
+							<span data-i18n="restoreColors">Restore Saved</span>
+						</button>
+					</div>
+					<div class="button-row">
+						<button id="export-colors" class="btn btn-secondary" title="Copy colors to clipboard to share or back them up" data-i18n-title="exportColorsTitle">
+							<span data-i18n="exportColors">Copy Colors</span>
+						</button>
+						<input type="text" id="import-colors" placeholder="Paste to import" data-i18n-placeholder="importColorsPlaceholder"
+							title="Paste copied colors here" data-i18n-title="importColorsTitle" />
+					</div>
 					<div class="setting-item">
 						<button id="reset-colors" class="btn btn-secondary" title="Reset all color settings to defaults" data-i18n-title="resetColorsTitle">
 							<span data-i18n="resetColors">Reset Colors</span>
 						</button>
 					</div>
+					<div id="color-set-status" class="status-text"></div>
 				</div>
 				<div class="setting-group">
 					<div class="setting-item">

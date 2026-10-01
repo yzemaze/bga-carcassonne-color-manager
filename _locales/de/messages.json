@@ -146,5 +146,61 @@
   "resetColorsTitle": {
     "message": "Alle Farbeinstellungen auf Standard zurücksetzen",
     "description": "Tooltip for reset colors button"
+  },
+  "saveColors": {
+    "message": "Farben speichern",
+    "description": "Save colors button label"
+  },
+  "saveColorsTitle": {
+    "message": "Aktuelle Farben speichern, wird zwischen deinen Browsern synchronisiert",
+    "description": "Tooltip for save colors button"
+  },
+  "restoreColors": {
+    "message": "Gespeicherte laden",
+    "description": "Restore saved colors button label"
+  },
+  "restoreColorsTitle": {
+    "message": "Gespeicherte Farben wiederherstellen",
+    "description": "Tooltip for restore colors button"
+  },
+  "exportColors": {
+    "message": "Farben kopieren",
+    "description": "Export colors button label"
+  },
+  "exportColorsTitle": {
+    "message": "Farben in die Zwischenablage kopieren, zum Teilen oder Sichern",
+    "description": "Tooltip for export colors button"
+  },
+  "importColorsPlaceholder": {
+    "message": "Hier einfügen",
+    "description": "Placeholder for import colors field"
+  },
+  "importColorsTitle": {
+    "message": "Kopierte Farben hier einfügen",
+    "description": "Tooltip for import colors field"
+  },
+  "statusColorsSaved": {
+    "message": "Farben gespeichert",
+    "description": "Status after saving colors"
+  },
+  "statusColorsRestored": {
+    "message": "Gespeicherte Farben geladen",
+    "description": "Status after restoring colors"
+  },
+  "statusColorsCopied": {
+    "message": "Farben in die Zwischenablage kopiert",
+    "description": "Status after exporting colors"
+  },
+  "statusColorsImported": {
+    "message": "Farben importiert",
+    "description": "Status after importing colors"
+  },
+  "statusInvalidColors": {
+    "message": "Ungültige Farbdaten",
+    "description": "Status when imported or saved colors are invalid"
+  },
+  "statusError": {
+    "message": "Etwas ist schiefgelaufen",
+    "description": "Status when saving or copying fails"
   }
 }

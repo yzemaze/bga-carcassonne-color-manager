@@ -146,5 +146,61 @@
   "resetColorsTitle": {
     "message": "Reset all color settings to defaults",
     "description": "Tooltip for reset colors button"
+  },
+  "saveColors": {
+    "message": "Save Colors",
+    "description": "Save colors button label"
+  },
+  "saveColorsTitle": {
+    "message": "Save current colors, synced across your browsers",
+    "description": "Tooltip for save colors button"
+  },
+  "restoreColors": {
+    "message": "Restore Saved",
+    "description": "Restore saved colors button label"
+  },
+  "restoreColorsTitle": {
+    "message": "Restore your saved colors",
+    "description": "Tooltip for restore colors button"
+  },
+  "exportColors": {
+    "message": "Copy Colors",
+    "description": "Export colors button label"
+  },
+  "exportColorsTitle": {
+    "message": "Copy colors to clipboard to share or back them up",
+    "description": "Tooltip for export colors button"
+  },
+  "importColorsPlaceholder": {
+    "message": "Paste to import",
+    "description": "Placeholder for import colors field"
+  },
+  "importColorsTitle": {
+    "message": "Paste copied colors here",
+    "description": "Tooltip for import colors field"
+  },
+  "statusColorsSaved": {
+    "message": "Colors saved",
+    "description": "Status after saving colors"
+  },
+  "statusColorsRestored": {
+    "message": "Saved colors restored",
+    "description": "Status after restoring colors"
+  },
+  "statusColorsCopied": {
+    "message": "Colors copied to clipboard",
+    "description": "Status after exporting colors"
+  },
+  "statusColorsImported": {
+    "message": "Colors imported",
+    "description": "Status after importing colors"
+  },
+  "statusInvalidColors": {
+    "message": "Invalid color data",
+    "description": "Status when imported or saved colors are invalid"
+  },
+  "statusError": {
+    "message": "Something went wrong",
+    "description": "Status when saving or copying fails"
   }
 }

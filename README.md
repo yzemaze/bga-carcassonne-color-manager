@@ -6,6 +6,7 @@
 - **Meeple Colors**: Custom meeples with user-selected base colors and automatic tint calculation.
 - **Tile Borders**: Customizable colors and width for player tile borders.
 - **Persistent Settings**: All settings are saved in your browser’s storage.
+- **Color Sets**: Save your colors synced across your browsers, restore them anytime and share them via clipboard.
 
 ## Usage
 
@@ -24,6 +25,8 @@ Toggle `Color Order` to switch between user-defined and BGA’s original color a
 - Reorder color sequence and customize text, meeple and border colors.
 
 #### Help Tab
+- Save colors (synced via your browser account) and restore them
+- Copy colors to the clipboard and import colors by pasting them
 - Reset colors
 - Links to repository, issues, discussions
 - Log level control
