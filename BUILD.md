@@ -120,4 +120,4 @@ Pull requests are welcome. Please
 
 ---
 
-Last updated: 2026-09-30 · version 0.3.0 · main branch commit b98a040
+Last updated: 2026-10-01 · version 0.3.0 · main branch commit 8bd394c
