@@ -1,6 +1,6 @@
 {
   "name": "bga-carcassonne-color-manager",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Browser extension for Carcassonne color management on Board Game Arena",
   "type": "module",
   "scripts": {
