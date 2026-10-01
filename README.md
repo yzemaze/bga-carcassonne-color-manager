@@ -8,6 +8,14 @@
 - **Persistent Settings**: All settings are saved in your browser’s storage.
 - **Color Sets**: Save your colors synced across your browsers, restore them anytime and share them via clipboard.
 
+## Screenshots
+
+| Colors tab | Reordering colors by drag & drop |
+|---|---|
+| ![Colors tab with color order, meeple, text and tile border colors](screenshots/screenshot_colors_tab.png) | ![Dragging a color swatch to change the color order](screenshots/screenshot_order_change.png) |
+| **Color picker** | **Help tab** |
+| ![Color picker with hue wheel, saturation slider and hex input](screenshots/screenshot_color_picker.png) | ![Help tab with save, restore, copy, import and reset buttons](screenshots/screenshot_help_tab.png) |
+
 ## Usage
 
 ### Getting Started
