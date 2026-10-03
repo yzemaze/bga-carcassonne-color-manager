@@ -2,8 +2,8 @@
 
 /* global ColorPicker */
 
-// Every setting except logging belongs to a color set
-const COLOR_SET_KEYS = Object.keys(window.DEFAULT_SETTINGS).filter((key) => !["logLevel", "verboseLogging"].includes(key));
+// Every setting except the on/off switch and logging belongs to a color set
+const COLOR_SET_KEYS = Object.keys(window.DEFAULT_SETTINGS).filter((key) => !["enabled", "logLevel", "verboseLogging"].includes(key));
 
 /**
  * Validates a color set value, imported values end up in the game page's CSS
@@ -51,6 +51,7 @@ class PopupManager {
 			this.displayVersion();
 			this.updateUI();
 			await this.updateRestoreButton();
+			await this.updateEnabledTitle();
 		} catch (error) {
 			debugLog("Popup", "Failed to initialize popup", error, "error");
 		}
@@ -81,21 +82,6 @@ class PopupManager {
 	async saveSettings() {
 		try {
 			await chrome.storage.local.set({ settings: this.settings });
-
-			// Notify content scripts about settings change
-			chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-				const [activeTab] = tabs;
-				if (activeTab) {
-					chrome.tabs
-						.sendMessage(activeTab.id, {
-							type: "settingsUpdated",
-							settings: this.settings,
-						})
-						.catch(() => {
-							// Silently fail if content script is not available
-						});
-				}
-			});
 		} catch (error) {
 			debugLog("Popup", "Failed to save settings", error, "error");
 		}
@@ -165,6 +151,19 @@ class PopupManager {
 			this.saveSettings();
 		});
 
+		document.getElementById("popup-enabled").addEventListener("change", (e) => {
+			this.settings.enabled = e.target.checked;
+			this.saveSettings();
+		});
+
+		// Keeps the switch in sync with the keyboard shortcut and prevents saving a stale value
+		chrome.storage.onChanged.addListener((changes, area) => {
+			if (area === "local" && changes.settings?.newValue) {
+				this.settings.enabled = changes.settings.newValue.enabled !== false;
+				document.getElementById("popup-enabled").checked = this.settings.enabled;
+			}
+		});
+
 		document.getElementById("popup-player-colors").addEventListener("change", (e) => {
 			this.settings.playerColors = e.target.checked;
 			this.saveSettings();
@@ -206,7 +205,21 @@ class PopupManager {
 		input.addEventListener("input", update);
 	}
 
+	async updateEnabledTitle() {
+		const toggle = document.getElementById("enabled-toggle");
+		const title = chrome.i18n.getMessage("toggleEnabled");
+		try {
+			const commands = await chrome.commands.getAll();
+			const shortcut = commands.find((command) => command.name === "toggle-enabled")?.shortcut;
+			toggle.title = shortcut ? `${title} (${shortcut})` : title;
+		} catch (error) {
+			debugLog("Popup", "Failed to read keyboard shortcut", error, "error");
+			toggle.title = title;
+		}
+	}
+
 	updateUI() {
+		document.getElementById("popup-enabled").checked = this.settings.enabled;
 		document.getElementById("popup-player-colors").checked = this.settings.playerColors;
 		document.getElementById("popup-tile-border-width").value = this.settings.tileBorderWidth;
 		document.getElementById("popup-tile-border-width-input").value = this.settings.tileBorderWidth;

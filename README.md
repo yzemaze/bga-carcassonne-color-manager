@@ -7,6 +7,7 @@
 - **Tile Borders**: Customizable colors and width for player tile borders.
 - **Persistent Settings**: All settings are saved in your browser’s storage.
 - **Color Sets**: Save your colors synced across your browsers, restore them anytime and share them via clipboard.
+- **On/Off Switch**: Turn the extension on or off via the switch in the popup or a keyboard shortcut.
 
 ## Screenshots
 
@@ -26,6 +27,11 @@
 5. Click on any player’s board to switch players’ colors.
 
 Toggle `Color Order` to switch between user-defined and BGA’s original color assignments.
+
+### Turning the Extension On or Off
+Use the switch next to the popup’s title or press `Alt+Shift+C` to show BGA’s original colors and turn them back on again. The shortcut can be changed in your browser:
+- **Chrome/Edge**: `chrome://extensions/shortcuts` (Edge: `edge://extensions/shortcuts`)
+- **Firefox**: `about:addons` → gear icon → *Manage Extension Shortcuts*
 
 ### Settings
 

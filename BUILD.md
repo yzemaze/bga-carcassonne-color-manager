@@ -16,18 +16,21 @@ The extension itself has no runtime dependencies or build step. npm packages are
 
 Load the repository root as an unpacked extension:
 - **Chrome**: `chrome://extensions` → enable developer mode → "Load unpacked"
-- **Firefox**: `about:debugging#/runtime/this-firefox` → "Load Temporary Add-on…" → select `manifest.json`
+- **Firefox**: run `npm run build:firefox`, then `about:debugging#/runtime/this-firefox` → "Load Temporary Add-on…" → select `build/firefox/manifest.json`
 
-Firefox doesn’t support background service workers, but the extension has no background script, so the source manifest works in both browsers.
+Firefox doesn’t support background service workers, so the Firefox build replaces `background.service_worker` with `background.scripts`.
 
 ### Code Structure
 
+- `background/background.js` handles the keyboard shortcut that turns the extension on or off
 - `content/main.js` entry point, loads settings and applies player colors
 - `content/modules/player-colors.js` generates the color CSS for texts, meeples and tile borders
 - `shared/` default settings and utilities shared by content scripts and popup
 - `popup/` settings UI including the color picker
 
 Content scripts and popup scripts are classic scripts sharing globals via `window`, so the load order in `manifest.json` and `popup/popup.html` matters.
+
+Settings live in `chrome.storage.local`. The content script listens to storage changes instead of messages, so changes from the popup or the keyboard shortcut reach every open game tab.
 
 ## Linting
 
@@ -120,4 +123,4 @@ Pull requests are welcome. Please
 
 ---
 
-Last updated: 2026-10-01 · version 0.3.2 · main branch commit 8bd394c
+Last updated: 2026-10-03 · version 0.4.0 · main branch commit 8bd394c

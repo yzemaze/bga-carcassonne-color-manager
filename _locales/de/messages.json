@@ -19,6 +19,10 @@
     "message": "BGA Carcassonne Color Manager",
     "description": "Popup window title"
   },
+  "toggleEnabled": {
+    "message": "Erweiterung ein- oder ausschalten",
+    "description": "Tooltip for the on/off switch and keyboard shortcut description"
+  },
   "playerColors": {
     "message": "Farbreihenfolge",
     "description": "Player colors feature label"

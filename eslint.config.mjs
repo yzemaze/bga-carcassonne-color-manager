@@ -27,7 +27,7 @@ export default [
 	},
 	{
 		// Extension files are classic scripts sharing globals via window
-		files: ["content/**/*.js", "popup/**/*.js", "shared/**/*.js"],
+		files: ["background/**/*.js", "content/**/*.js", "popup/**/*.js", "shared/**/*.js"],
 		languageOptions: {
 			ecmaVersion: "latest",
 			sourceType: "script",

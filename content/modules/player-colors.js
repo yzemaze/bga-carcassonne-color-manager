@@ -297,7 +297,7 @@ function applyScheme() {
  * Toggles between normal and alternate color order
  */
 function togglePlayerColors() {
-	if (!window.Utils.getSetting("playerColors")) {
+	if (!window.Utils.getSetting("enabled") || !window.Utils.getSetting("playerColors")) {
 		return;
 	}
 	showAlternate = !showAlternate;
@@ -328,6 +328,14 @@ function setupPlayerColors() {
 	}
 
 	try {
+		if (!window.Utils.getSetting("enabled")) {
+			defaultSheet.textContent = "";
+			normalSheet.textContent = "";
+			alternateSheet.textContent = "";
+			window.Utils.debugLog("PlayerColors", "Extension disabled, colors removed", null, "info");
+			return;
+		}
+
 		updateDefaultSheet();
 
 		const originalColors = getOriginalPlayerColors();

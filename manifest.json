@@ -3,7 +3,7 @@
   "name": "__MSG_extensionName__",
   "short_name": "__MSG_extensionShortName__",
   "description": "__MSG_extensionDescription__",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "default_locale": "en",
   
   "author": "yzemaze",
@@ -30,6 +30,19 @@
   "options_ui": {
     "page": "popup/popup.html",
     "open_in_tab": false
+  },
+  
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  
+  "commands": {
+    "toggle-enabled": {
+      "suggested_key": {
+        "default": "Alt+Shift+C"
+      },
+      "description": "__MSG_toggleEnabled__"
+    }
   },
   
   "content_scripts": [

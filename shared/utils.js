@@ -162,7 +162,7 @@ class SettingsManager {
 	async init() {
 		debugLog("Utils", "Initializing SettingsManager", null, "info");
 		await this.loadSettings();
-		this.setupMessageListener();
+		this.setupStorageListener();
 		debugLog("Utils", "SettingsManager initialization complete", null, "info");
 	}
 
@@ -187,28 +187,27 @@ class SettingsManager {
 		}
 	}
 
-	setupMessageListener() {
-		chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
-			debugLog("Utils", "Message received", { type: message.type }, "log", true);
-			if (message.type !== "settingsUpdated") {
+	// Storage events reach all open game tabs, whether the popup or the keyboard shortcut changed settings
+	setupStorageListener() {
+		chrome.storage.onChanged.addListener((changes, area) => {
+			if (area !== "local" || !changes.settings) {
 				return;
 			}
 
 			const previousSettings = { ...this.settings };
-			this.settings = { ...this.defaultSettings, ...message.settings };
+			this.settings = { ...this.defaultSettings, ...changes.settings.newValue };
 
-			const changes = {};
+			const diff = {};
 			Object.keys(this.settings).forEach(key => {
 				if (this.settings[key] !== previousSettings[key]) {
-					changes[key] = { from: previousSettings[key], to: this.settings[key] };
+					diff[key] = { from: previousSettings[key], to: this.settings[key] };
 				}
 			});
-			if (Object.keys(changes).length > 0) {
-				debugLog("Utils", "Settings updated", changes, "info");
+			if (Object.keys(diff).length > 0) {
+				debugLog("Utils", "Settings updated", diff, "info");
 			}
 
 			this.applySettings(previousSettings);
-			sendResponse({ success: true });
 		});
 	}
 

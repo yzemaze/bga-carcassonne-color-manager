@@ -1,6 +1,7 @@
 // Default settings configuration for BGA Carcassonne Color Manager
 
 window.DEFAULT_SETTINGS = {
+	enabled: true,
 	playerColors: false,
 	colorOrder: "ybrgk",
 	// Meeple colors (used for SVG color replacement)

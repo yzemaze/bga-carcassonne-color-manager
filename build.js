@@ -26,6 +26,7 @@ const CONFIG = {
 
 	copyPatterns: [
 		"_locales/**/*",
+		"background/**/*",
 		"content/**/*",
 		"icons/**/*",
 		"popup/**/*",
@@ -269,6 +270,11 @@ export class ExtensionBuilder {
 	}
 
 	modifyFirefoxManifest(manifest) {
+		// Firefox doesn't support background service workers
+		if (manifest.background?.service_worker) {
+			manifest.background = { scripts: [manifest.background.service_worker] };
+		}
+
 		delete manifest.minimum_chrome_version;
 
 		this.logger.debug("Applied Firefox-specific manifest modifications");
@@ -437,7 +443,7 @@ export class ExtensionBuilder {
 			}
 
 			// Check required files exist
-			const requiredFiles = ["content/main.js"];
+			const requiredFiles = ["background/background.js", "content/main.js"];
 
 			for (const file of requiredFiles) {
 				const filePath = path.join(buildPath, file);
