@@ -22,13 +22,15 @@ You will see:
 - A Tile Borders row with 5 color swatches
 - A Border Width slider and input box
 
-![Colors tab with color order, meeple, text and tile border colors](screenshots/screenshot_color_tab.png)
+![Colors tab with color order off, meeple, text and tile border colors](screenshots/screenshot_color_tab_off.png)
 
 #### Color Order OFF (Default)
 The 3 three rows of swatches determine the colors of their associated game elements. If you change the yellow swatch (upper left) to orange, all yellow meeples are replaced with orange ones.
 
 #### Color Order ON
 Turning Color Order ON will pop up another row of swatches above the original 3. These serve as **headers** for each column of swatches. Each appears the same color as the Meeple swatch directly below it in that column. You can reorder the columns by dragging these headers.
+
+![Colors tab with color order on, meeple, text and tile border colors](screenshots/screenshot_color_tab_on.png)
 
 In this mode, the columns are associated with players, as ordered in the BGA display. The leftmost column will determine the Meeple, Text and Tile Border colors for the first player displayed, the column to its right for the second player displayed, and so on.
 
