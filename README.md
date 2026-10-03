@@ -16,13 +16,13 @@ This extension allows you to customize the following features in Carcassonne gam
 ### Colors Tab
 You will see:
 
-![Colors tab with color order, meeple, text and tile border colors](screenshots/screenshot_color_tab.png)
-
 - A Color Order toggle
 - A Meeple row with 5 color swatches
 - A Text row with 5 color swatches
 - A Tile Borders row with 5 color swatches
 - A Border Width slider and input box
+
+![Colors tab with color order, meeple, text and tile border colors](screenshots/screenshot_color_tab.png)
 
 #### Color Order OFF (Default)
 The 3 three rows of swatches determine the colors of their associated game elements. If you change the yellow swatch (upper left) to orange, all yellow meeples are replaced with orange ones.
