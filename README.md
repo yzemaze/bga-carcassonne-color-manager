@@ -61,7 +61,7 @@ Here you can:
 - Toggle verbose logging
 
 ## Known Issues
-This extension does not have all expansion meeples, and will replace those with standard meeples. It is therefore recommended that you turn the extension off when playing relevant expansion games. If you’d like support for expansion please supply the relevant meeples in svg format.
+This extension does not have all expansion meeples, and will replace those with standard meeples. It is therefore recommended that you turn the extension off when playing relevant expansion games. If you’d like support for expansions please supply the relevant meeples in svg format.
 Language support: EN, DE
 If you’d like another one translate the [English version](https://github.com/yzemaze/bga-carcassonne-color-manager/blob/main/_locales/en/messages.json) and create a pull request.
 
