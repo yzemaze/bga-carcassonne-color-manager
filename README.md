@@ -8,6 +8,9 @@ This extension allows you to customize the following features in Carcassonne gam
 - Tile Border Colors
 - Tile Border Width
 
+## Installation
+[Chrome Web Store](https://chromewebstore.google.com/detail/bga-carcassonne-color-man/gfjgkgianbobbjbbjpfoheojpcikkjbh) or [Releases](https://github.com/yzemaze/bga-carcassonne-color-manager/releases)
+
 ## Instructions
 1. Navigate to any Carcassonne game (live or replay) on Board Game Arena.
 2. Click the extension icon in your browser toolbar to open settings.
